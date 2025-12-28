@@ -1,0 +1,8 @@
+{
+  "error_counts": {
+    "char_insertion": 8813,
+    "word_i": 2
+  },
+  "total_chars_ref": 0,
+  "total_chars_hyp": 8813
+}
