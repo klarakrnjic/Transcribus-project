@@ -1,2 +1,2 @@
-ref_char,hyp_char,count,napomena
-,,0,Nema karakter zamjena - provjeri normalizaciju tekstova
+ref_char,hyp_char,count,note
+,,0,No character substitutions - check text normalization
