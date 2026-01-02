@@ -49,7 +49,7 @@ def split_by_page(doc):
     current_page = []
     for para in doc.paragraphs:
         current_page.append(para.text)
-        # Provjera da li odlomak sadrži prekid stranice
+        # Check for page break
         if para._element.xpath('.//w:br[@w:type="page"]'):
             pages.append('\n'.join(current_page))
             current_page = []
