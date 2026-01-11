@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/24411775/README.md)
 # Transcribus-project
 
 > A small collection of scripts for computing speech transcription error metrics (CER/WER), classifying errors, and plotting results.
