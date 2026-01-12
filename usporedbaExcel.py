@@ -13,8 +13,7 @@ def usporedi_datoteke(putanja1, putanja2, praznine):
         ukupno_podudaranja = 0
         ukupno_znakova = 0
 
-        print(f"{'Linija':<10} | {'Podudaranje (%)':<15} | {'CER (%)':<15} |")
-        print("-" * 48)
+        print("Linija;Podudaranje;CER")
 
         for i in range(max_broj_linija):
             # Dohvaćamo liniju ili prazan string ako linija ne postoji u jednoj od datoteka
@@ -43,7 +42,7 @@ def usporedi_datoteke(putanja1, putanja2, praznine):
             else:
                 postotak_linije = 100.0 if l1 == l2 else 0.0
 
-            print(f"{i+1:<10} | {postotak_linije:>14.2f}% | {100-postotak_linije:>14.2f}% |")
+            print(f"{i+1};{postotak_linije:.2f};{100-postotak_linije:.2f}")
 
             # Dodavanje u ukupnu statistiku
             ukupno_podudaranja += lokalna_podudaranja
