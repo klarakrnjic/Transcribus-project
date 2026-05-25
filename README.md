@@ -1,70 +1,48 @@
 # Transcribus-project
 
-> A small collection of scripts for computing speech transcription error metrics (CER/WER), classifying errors, and plotting results.
+> Mala zbirka skripti za izračunavanje metrika pogrešaka u transkripciji govora (CER/WER), klasifikaciju pogrešaka i iscrtavanje grafikona rezultata.
 
-## Summary
+## Sažetak
 
-This repository contains Python scripts used to compute Character Error Rate (CER) and Word Error Rate (WER), classify transcription errors, and generate simple graphs from results. It was used with normalized reference/hypothesis text files and produces CSV/JSON outputs and plots.
+Ovaj repozitorij sadrži Python skripte koje se koriste za izračunavanje stope pogrešnih znakova (CER) i stope pogrešnih riječi (WER), klasifikaciju pogrešaka u transkripciji te generiranje jednostavnih grafikona na temelju rezultata. Korišten je s normaliziranim tekstualnim datotekama referentnog teksta i hipoteze te generira CSV/JSON izlazne datoteke i grafikone.
 
-## Files of interest
+## Važne datoteke
 
-- `cer_wer_mestrija.py` — compute CER/WER and per-page metrics.
-- `classify_errors.py` — classify and summarize transcription errors.
-- `graph-digital.py` — generate digital/automatic-analysis graphs.
-- `graph-manual.py` — generate manual/annotator graphs.
-- `reference_normalized.txt` — reference transcripts (normalized).
-- `hypothesis_normalized.txt` — hypothesis transcripts (normalized).
-- `moj_rezultat_char_subs.csv`, `moj_rezultat_errors.csv`, `moj_rezultat_stats.json`, `page_level_cer_wer.csv` — example outputs already in the repo.
+- `cer_wer_mestrija.py` — izračunava CER/WER i metrike po stranici.
+- `classify_errors.py` — klasificira i sažima pogreške u transkripciji.
+- `graph-digital.py` — generira grafikone za digitalnu/automatsku analizu.
+- `graph-manual.py` — generira grafikone za ručnu analizu/analizu anotatora.
+- `reference_normalized.txt` — referentni transkripti (normalizirani).
+- `hypothesis_normalized.txt` — transkripti hipoteze (normalizirani).
+- `moj_rezultat_char_subs.csv`, `moj_rezultat_errors.csv`, `moj_rezultat_stats.json`, `page_level_cer_wer.csv` — primjeri izlaznih datoteka koje se već nalaze u repozitoriju.
 
-## Requirements
+## Preduvjeti
 
-Install Python 3.8+ and the typical data packages. If you don't have a `requirements.txt`, install the common dependencies:
+Instalirajte Python 3.8+ i uobičajene pakete za obradu podataka. Ako nemate datoteku `requirements.txt`, instalirajte uobičajene zavisnosti:
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate    # on Windows: .venv\Scripts\activate
+source .venv/bin/activate    # na Windowsima: .venv\Scripts\activate
 pip install pandas matplotlib seaborn numpy jiwer
-```
+Prilagodite pakete tako da odgovaraju vašem okruženju ili uvozima (imports) unutar skripti.
 
-Adjust the packages to match your environment or the scripts' imports.
+Brzi početak
+Postavite svoje normalizirane datoteke referentnog teksta i hipoteze u korijensku mapu repozitorija (ili ažurirajte staze u skriptama):
 
-## Quickstart
+reference_normalized.txt
 
-1. Place your normalized reference and hypothesis files in the repo root (or update script paths):
+hypothesis_normalized.txt
 
-   - `reference_normalized.txt`
-   - `hypothesis_normalized.txt`
+Pokrenite skriptu za izračun CER/WER metrika:
 
-2. Run the CER/WER script:
-
-```bash
+Bash
 python cer_wer_mestrija.py
-```
+Pokrenite klasifikaciju pogrešaka:
 
-3. Run error classification:
-
-```bash
+Bash
 python classify_errors.py
-```
+Izradite grafikone (ove skripte obično čitaju generirane CSV/JSON izlazne datoteke):
 
-4. Create plots (these scripts typically read the produced CSV/JSON outputs):
-
-```bash
+Bash
 python graph-digital.py
 python graph-manual.py
-```
-
-Check the generated files like `moj_rezultat_stats.json`, `moj_rezultat_errors.csv`, and `page_level_cer_wer.csv` for results.
-
-## Notes
-
-- The exact CLI arguments (if any) depend on how each script is implemented. If a script expects arguments, run `python script.py -h` or open the script to inspect usage.
-- If you want, I can add a `requirements.txt` or make small wrappers that accept `--reference` and `--hypothesis` arguments for clearer CLI usage.
-
-## Contributing
-
-Open an issue or submit a PR with improvements, additional documentation, or a requirements file.
-
-## License
-
-Add your preferred license or leave it unlicensed.
